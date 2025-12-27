@@ -1,8 +1,6 @@
 #include <stdio.h>
 
 // a string can be passed in as (char *str) or (char str[])
-// it does not matter, both functions will still work the same with
-// either way of inputing the string, for strings, *str is the same as str[]
 void read_string_by_pointer(char *str){
     while((*str) != '\0'){
         printf("%c", *str);
