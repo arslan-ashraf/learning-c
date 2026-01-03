@@ -38,15 +38,24 @@ void print_one_d_array(int arr[]){
 	printf("\n");
 }
 
-int main(int argc, char *argv){
+int main(int argc, char *argv[]){
 
 
 	printf("////////////////////////// Start - 1-D Array //////////////////////////\n");
+	
 	int one_d_array[] = { 1, 6, 0 };
+
 	// multiple ways of an address of 1-d array
 	printf("address of 1-d array %d = %d\n", one_d_array, &one_d_array[0]);
 	print_one_d_array(one_d_array);
+
+	// above print statements print the following:
+	// address of 1-d array 1627389244 = 1627389244
+	// reading 1-D array: 1 6 0
+
 	printf("/////////////////////////// End - 1-D Array ///////////////////////////\n\n");
+
+	
 
 	///////////////////////////////////////////////////////////////////////
 	////////////////////////// Start - 2-D Array //////////////////////////
@@ -105,6 +114,13 @@ int main(int argc, char *argv){
 	// and it returns a pointer whose unit jump is sizeof(int) because the pointer if int *p
 	// in the expression *(two_d_array + i) + j, the number j = sizeof(int)
 	// dereferencing twice *(*(two_d_array + i) + j) returns element at two_d_array[i][j]
+
+	// above print statements print the following:
+	// p_2d: address of first subarray using pointer  -> 1627389216 = 1627389216 = 1627389216
+	// p_2d: address of second subarray using pointer -> 1627389228 = 1627389228
+	// p_2d: element at two_d_array[1][0] using pointer   -> 3 = 3 = 3
+	// address of 2-d array using 2-D array name 1627389216 = 1627389216 = 1627389216 = 1627389216 = 1627389216 = 1627389216 = 1627389216 = 1627389216
+	// address of second subarray of a 2-d array 1627389228 = 1627389228 (+ 4) = 1627389232 -> 9
 
 	printf("/////////////////////////// End - 2-D Array ///////////////////////////\n\n");
 
@@ -172,6 +188,12 @@ int main(int argc, char *argv){
 
 	printf("/////////////////////////// End - 3-D Array ///////////////////////////\n\n");
 
+	// above print statements print the following:
+	// p_3d: address of first  submatrix using pointer -> 1627389120 = 1627389120 = 1627389120 = 1627389120
+	// p_3d: address of second submatrix using pointer -> 1627389168 = 1627389168 = 1627389168 = 1627389168
+	// p_3d: address of second submatrix using pointer -> 1627389168 = 1627389168 = 1627389168 = 1627389168
+	// p_3d: address of third subarray of the second submatrix using pointer -> 1627389200 = 1627389200 = 1627389200 = 162738920
+
 	///////////////////////////////////////////////////////////////////////
 	/////////////////////////// End - 3-D Array ///////////////////////////
 	///////////////////////////////////////////////////////////////////////
@@ -203,6 +225,11 @@ int main(int argc, char *argv){
 	some_function(pointer_to_function, 5);
 
 	printf("////////////// End - Callbacks and Pointers to Functions //////////////\n\n");
+
+	// above print statements print the following:
+	// value of z: 7
+	// value of x before being incremented, printed inside callback_test() function: 5
+	// value of x (now called b) after it is incremented, printed inside some_function(): 6
 
 	///////////////////////////////////////////////////////////////////////
 	////////////// End - Callbacks and Pointers to Functions //////////////
@@ -242,6 +269,17 @@ int main(int argc, char *argv){
 	free(s);
 
 	printf("////////////////////// End - Pointers to Structs //////////////////////\n\n");
+
+	// above print statements print the following:
+	// size (in bytes) of student_t: 16
+	// before modification: student name: Arslan
+	// before modification: student  gpa: 4.000000
+	// address of  s->name: 1715338816
+	// address of s1->name: 1715338816
+	// after modification:  student name: Arslan
+	// after modification:  student  gpa: 4.100000
+	// student s  gpa: 4.110000
+	// student s1 gpa: 4.110000
 
 	///////////////////////////////////////////////////////////////////////
 	////////////////////// End - Pointers to Structs //////////////////////
