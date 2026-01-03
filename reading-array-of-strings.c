@@ -7,7 +7,7 @@ void read_array_of_strings(char **arr){
     }
 }
 
-void read_array_of_integers(int nums[][3]){
+void read_matrix_of_integers(int nums[][3]){
     for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
             printf("%d ", nums[i][j]);
@@ -15,13 +15,13 @@ void read_array_of_integers(int nums[][3]){
     }
 }
 
-int main(int argc, char *argv){
+int main(int argc, char *argv[]){
 
     char *arr[] = { "first", "second", "third" };
     read_array_of_strings(arr);
 
     int nums[][3] = { {1,2,3}, {4,5,6}, {7,8,9} };
-    read_array_of_integers(nums);
+    read_matrix_of_integers(nums);
 
     return 0;
 }
