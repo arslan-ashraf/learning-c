@@ -15,11 +15,11 @@ void read_string_by_array_iteration(char str[]){
     }
 }
 
-int main(int argc, char *argv){
+int main(int argc, char *argv[]){
 
     // *str1 is the same as str1[]
     char *str1 = "a - testing - pointer";
-    char str2[] = "b - testing - array";
+    char str2[] = "b - testing - array iteration";
     read_string_by_pointer(str1);
     read_string_by_array_iteration(str2);
 
