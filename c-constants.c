@@ -13,7 +13,7 @@ int main(){
 	const int constant_variable = 4;
 	const int *ptr_constant_variable = &constant_variable;
 
-	printf("pointer derefenced: %d\n", *ptr_constant_variable);
+	printf("constant value, pointer derefenced: %d\n", *ptr_constant_variable);
 
 	// when const is to the very left of the pointer, the constant is the value
 	// that the pointer is pointing to, so this won't compile:
@@ -22,8 +22,12 @@ int main(){
 	// but the pointer itself is not constant, so it can point to a different variable
 	int nine = 9;
 	ptr_constant_variable = &nine;
-	
-	printf("pointer derefenced: %d\n", *ptr_constant_variable);
+
+	printf("constant value, pointer derefenced: %d\n", *ptr_constant_variable);
+
+	// this also throws a compiler error, even though nine is not constant
+	// the pointer says that it should be
+	// *ptr_constant_variable = 1;
 
 	////////////////////////////////////////////////////////////////////////////
 	/////////////////////////// End - Constant Value ///////////////////////////
@@ -34,8 +38,23 @@ int main(){
 	///////////////////////// Start - Constant Pointer /////////////////////////
 	////////////////////////////////////////////////////////////////////////////
 
+	// here, reading right to left
 	int number = 5;
 	int const *constant_pointer = &number;
+
+	printf("constant pointer, pointer derefenced: %d\n", *constant_pointer);
+
+	// this throws a compiler error, because the constant is the pointer
+	// the pointer cannot point to anything other than its initial address
+	// int x = 0;
+	// *constant_pointer = &x;
+
+	// however, we can change the original variable
+	number = 10;
+	printf("constant pointer, pointer derefenced: %d\n", *constant_pointer);
+
+	// directly changing the underlying value also throws an error
+	// *constant_pointer = 0;
 
 	////////////////////////////////////////////////////////////////////////////
 	////////////////////////// End - Constant Pointer //////////////////////////
